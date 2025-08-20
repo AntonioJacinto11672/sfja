@@ -132,11 +132,18 @@ export default function SindicalForm() {
 
   return (
     <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl p-8 mt-6">
-      <img src={"../../assets/logo.png"} alt="Logo" className="mx-auto mb-6 w-32 h-32" />
-      <h1 className="text-2xl font-bold text-center mb-6">
-        Proposta de Admissão ao Quadro Social
-      </h1>
+      <div className="w-32 h-32 flex mx-auto">
+        <img src={"/logo.png"} alt="Logo" className="mx-auto mb-6 w-32 h-32" />
+      </div>
+      <div>
+        <h1 className="text-2xl font-bold text-center">
+          Proposta de Admissão ao Quadro Social
+        </h1>
+        <h6 className="text-xl font-bold text-center ">
+          Sindicato dos Funcionários Judiciais de Angola - SFJA
+        </h6>
 
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Dados Pessoais */}
         <fieldset className="grid md:grid-cols-2 gap-4 border p-4 rounded-lg">
