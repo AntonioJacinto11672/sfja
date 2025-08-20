@@ -132,7 +132,7 @@ export default function SindicalForm() {
 
   return (
     <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl p-8 mt-6">
-      <img src="../../assets/logo.png" alt="Logo" className="mx-auto mb-6 w-32 h-32" />
+      <img src={"../../assets/logo.png"} alt="Logo" className="mx-auto mb-6 w-32 h-32" />
       <h1 className="text-2xl font-bold text-center mb-6">
         Proposta de Admissão ao Quadro Social
       </h1>
@@ -156,14 +156,14 @@ export default function SindicalForm() {
             errors={errors}
             rules={{ required: "Campo obrigatório" }}
           />
-           <InputField
+          <InputField
             label="Nome da Mãe"
             name="motherName"
             register={register}
             errors={errors}
             rules={{ required: "Campo obrigatório" }}
           />
-          
+
           <InputField
             label="Local de Trabalho"
             name="localTrabalho"
@@ -205,9 +205,9 @@ export default function SindicalForm() {
             name="categoria"
             register={register}
             errors={errors}
-            options={["Oficial de Diligências de 1ª Classe", "Oficial de Diligências de 2ª Classe","Oficial de Diligências de 3ª Classe",
-               "Ajudante de Escrivão de Direito 1ª Classe", "Ajudante de Escrivão de Direito 2ª Classe","Ajudante de Escrivão de Direito 3ª Classe", 
-               "Escrivão de Direito 1ª Classe", "Escrivão de Direito 2ª Classe","Escrivão de Direito 3ª Classe", "Secretário Judicial"]}
+            options={["Oficial de Diligências de 1ª Classe", "Oficial de Diligências de 2ª Classe", "Oficial de Diligências de 3ª Classe",
+              "Ajudante de Escrivão de Direito 1ª Classe", "Ajudante de Escrivão de Direito 2ª Classe", "Ajudante de Escrivão de Direito 3ª Classe",
+              "Escrivão de Direito 1ª Classe", "Escrivão de Direito 2ª Classe", "Escrivão de Direito 3ª Classe", "Secretário Judicial"]}
             rules={{ required: "Campo obrigatório" }}
           />
           <InputField
@@ -223,7 +223,7 @@ export default function SindicalForm() {
             name="sexo"
             register={register}
             errors={errors}
-            options={["Masculino", "Feminino", "Outro"]}
+            options={["Masculino", "Feminino"]}
             rules={{ required: "Campo obrigatório" }}
           />
           <SelectField
@@ -231,7 +231,7 @@ export default function SindicalForm() {
             name="estadoCivil"
             register={register}
             errors={errors}
-            options={["Solteiro", "Casado", "Divorciado", "Viúvo"]}
+            options={["Solteiro", "Casado"]}
             rules={{ required: "Campo obrigatório" }}
           />
           <InputField
@@ -253,14 +253,21 @@ export default function SindicalForm() {
             name="cartaConducao"
             register={register}
             errors={errors}
-            rules={{ required: "Campo obrigatório" }}
+
           />
           <InputField
             label="NIF"
             name="nif"
             register={register}
             errors={errors}
-            rules={{ required: "Campo obrigatório" }}
+            rules={{
+              required: "Campo obrigatório",
+              pattern: {
+                value: /^[0-9]{9}[A-Za-z]{2}[0-9]{3}$/,
+                message:
+                  "Formato inválido. Ex: 123456789LA001 (9 números, 2 letras, 3 números)",
+              },
+            }}
           />
         </fieldset>
 
